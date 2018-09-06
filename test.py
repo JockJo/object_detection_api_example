@@ -9,13 +9,13 @@ import tensorflow as tf
 from object_detection.utils import label_map_util
 from object_detection.utils import visualization_utils as vis_util
 
-if tf.__version__ != '1.4.0':
+if tf.__version__ != '1.10.0':
     raise ImportError('Please upgrade your tensorflow installation to v1.4.0!')
 
 # 模型配置
 PATH_TO_CKPT = 'training/export_result/frozen_inference_graph.pb'
 PATH_TO_LABELS = 'data/classes_map.pbtxt'
-NUM_CLASSES = 10
+NUM_CLASSES = 1
 
 # 加载模型
 detection_graph = tf.Graph()
@@ -43,7 +43,7 @@ def read_image(path):
 
     return image_np, image_np_expanded, WIDTH, HEIGHT
 
-img_path = 'data/images/G5_47.jpg'
+img_path = r'data/images/text_1.jpg'
 
 with detection_graph.as_default():
     with tf.Session(graph=detection_graph) as sess:

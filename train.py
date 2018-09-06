@@ -52,6 +52,8 @@ from object_detection.builders import model_builder
 from object_detection.utils import config_util
 
 tf.logging.set_verbosity(tf.logging.INFO)
+os.environ["CUDA_VISIBLE_DEVICES"] = "2"
+
 
 flags = tf.app.flags
 flags.DEFINE_string('master', '', 'Name of the TensorFlow master to use.')

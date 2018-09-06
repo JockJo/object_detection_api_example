@@ -17,5 +17,5 @@ train = pd.concat([grouped_list[i] for i in train_index])
 test = pd.concat([grouped_list[i] for i in test_index])
 
 print(len(train), len(test))
-train.to_csv('data/train_labels.csv', index=None)
-test.to_csv('data/test_labels.csv', index=None)
+train.to_csv('data/train_labels.csv', index=0)
+test.to_csv('data/test_labels.csv', index=0)
